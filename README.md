@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="https://github.com/yash-pimpale/blob/main/Images/Global_warming_logo.jpeg">
+  <img width="400" height="300" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/T20I_WC_logo.jpg">
 </p>
 
 # T20 World Cup 2022 Dream Team Selection
@@ -25,10 +25,6 @@ Below mentioned data files are used in this project:-
 - Players : It contains vital player-specific details, including the player's team, batting style, bowling style, role in the team, and a brief description, etc.
 
 Note : It's important to note that the data encompasses matches played in both the Qualifier and Super 12 stages of the tournament.
-
-Key parameter:
-
-
 
 ## Requirement Scoping
 
@@ -90,7 +86,23 @@ We'll start by importing data from CSV files into Power BI tables and then perfo
 
 Below is the preview of the data:-
 
-### 2. Data Modeling
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/Batting_Summary_Table.png">
+</p>
+
+### 2. Creating Key Parameters
+
+We will now create key parameters which are essential for performing calculations and analysis. These parameters allow us to define custom calculations/aggregations based on existing column data. For e.g. 
+- Total Runs : It is calculated as the sum of runs scored by players in the batting summary table i.e. SUM(batting_summary[runs]).
+- Batting Average : It represents the average number of runs scored per innings played. Calculated using the formula - DIVIDE([Total Runs],[Total Innings Dismissed],0).
+
+List of all key parameters created and used in this project is [here](https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/tree/main/).
+
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/Key_Parameters.png">
+</p>
+
+### 3. Data Modeling
 
 We will now establish relationships between the tables. This step is crucial for integrating data from different sources and tables, enabling us to create meaningful visualizations and perform analyses across related data.
 
@@ -99,8 +111,12 @@ We will now establish relationships between the tables. This step is crucial for
 - Create Relationships: Using Power BI's modeling, we will create relationships between the tables based on these fields.
   1. We establish a many-to-one relationship between the "Batting Summary" and "Players" table and the "Bowling Summary" and "Players" tables using the "Name" field.
   2. We also create a many-to-one relationship between the "Batting Summary" and "Match Summary" table and the "Bowling Summary" and "Match Summary" tables using the "mattch_id" field.
+ 
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/Data_Modelling.png">
+</p>
 
-### 3. Creating Interactive Reports
+### 4. Creating Interactive Reports
 
 Create interactive report for each type of role by adding respective filters as mentioned above. Add slicer for qualifier and super 12 stage. Create buttons for each role so that user can navigate to respective page by click on it (control + click). Add table displaying selected players based on criteria and add tooltip on player name to display indetailed details of the player. Add onclick functionality such that when user clicks on the player, its statistics are displayed (otherwise hidden). Select multiple player to check their combined stats. Add 4 separate stacked line chart for performance metrics. 
 
@@ -110,10 +126,32 @@ Create interactive reports in Power BI involves designing visualizations and use
 
 - Stage Slicers: Included slicer that allow users to filter data based on the qualifier and Super 12 stages, enabling them to compare player performance in different tournament stages.
 
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/Pages_and_Slicer.png">
+</p>
+
 - Role Buttons: Created buttons for each role to enable users to navigate to the respective role page with a simple click (Ctrl + click).
 
 - Player Selection Table: Added a table to display selected players who meet the role-specific criteria. This table includes player names, role-specific key statistics and an interactive tooltip. When users hover over a player's name, the tooltip will display detailed player information, such as player's picture, country, batting and bowling statistics (depending upon the role). Also allowed users to select multiple players from the table to compare their combined statistics.
 
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/Report_Hover_Functionality.png">
+</p>
+
 - OnClick Functionality: Incorporated onClick functionality for player names in the selection table. When a user clicks on a player's name, additional key statistics such as Batting Average, Strike Rate, Economy, etc will become visible (otherwise hidden) for that player according to the role.
 
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/Report_OnClick_Functionality.png">
+</p>
+
 - Stacked Line Charts: Created four separate stacked line charts to visualize performance metrics. These charts can include metrics like batting average, strike rate, wickets taken, or any other relevant statistics vs match day, for players in each role.
+
+Below video showcases all the functionalities and capabilities of this Power BI report. It serves as a comprehensive demonstration of how users can interact with and leverage the report for informed decision-making.
+
+<p align="center">
+  <img width="700" height="400" src="https://github.com/yash-pimpale/T20_World_Cup_2022_Dream_Team_Selection/blob/main/Media/World_Cup_Dream_Team_Report.gif">
+</p>
+
+## Conclusion
+
+This project demonstrates the power of data analysis and visualization in sports selection process. It enables cricket enthusiasts, coaches, and team management to make informed decisions and assemble the most competitive team for a prestigious tournament like the ICC T20 World Cup. The project's structured approach and user-friendly reports empower stakeholders to optimize player selection based on specific criteria and roles, ultimately enhancing the team's chances of success.
